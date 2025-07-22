@@ -6,6 +6,7 @@ disable= C0114, # missing-module-docstring
          W0703, # catch-base-exception
          C0209, # formatting-not-a-string
          E0015, # no-name-in-module
+         C0321, # multiple-statements
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
