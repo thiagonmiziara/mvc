@@ -14,12 +14,23 @@ class TestPersonCreatorView(unittest.TestCase):
         self.person_creator_view = PersonCreatorView(self.mock_controller)
 
     def test_handle(self) -> None:
-        mock_request_body = {"name": "John Doe", "age": 30, "pet_id": 123}
+        mock_request_body = {
+            "first_name": "John",
+            "last_name": "Doe",
+            "age": 30,
+            "pet_id": 123,
+        }
         mock_http_request = HttpRequest(body=mock_request_body)
 
         mock_controller_response = {
             "success": True,
-            "data": {"id": 1, "name": "John Doe"},
+            "data": {
+                "id": 1,
+                "first_name": "John",
+                "last_name": "Doe",
+                "age": 30,
+                "pet_id": 123,
+            },
         }
         self.mock_controller.create.return_value = mock_controller_response
 
